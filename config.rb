@@ -113,7 +113,7 @@ activate :deploy do |deploy|
   # Git
    deploy.method = :git
   # Optional Settings
-  # deploy.remote = "custom-remote" # remote name or git url, default: origin
+   deploy.remote = "git@github.com:JHanley85/becauseBryce.git" # remote name or git url, default: origin
    deploy.branch = "gh-pages" # default: gh-pages
 
   # SFTP 
