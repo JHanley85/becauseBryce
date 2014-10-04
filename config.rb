@@ -3,9 +3,24 @@
 ###
 
 # Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+compass_config do |config|
+  config.output_style = :compact
+end
+activate :blog do |b|
+  b.permalink = "/:title.html"
+  b.sources = "/posts/:title.html"
+  b.custom_collections = {
+      category: {
+          link: '/categories/{tag}.html',
+          template: '/category.html'
+      }
+  }
+
+  b.taglink = "/tags/:tag.html"
+  b.tag_template = "/tag.html"
+  # b.year_link_template= "/calendar.html"
+  b.calendar_template = 'calendar.html'
+end
 
 ###
 # Page options, layouts, aliases and proxies
@@ -36,7 +51,7 @@
 # activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
-activate :livereload
+#activate :livereload
 activate :autoprefixer
 
 # Methods defined in the helpers block are available in templates
@@ -51,7 +66,7 @@ set :js_dir, 'assets/javascripts'
 set :images_dir, 'assets/images'
 
 
-set :slim, { pretty: true }
+#set :slim, { pretty: true }
 
 # activate :directory_indexes
 
@@ -84,7 +99,7 @@ configure :build do
   # activate :gzip
 
   # For non-minify html. Remove if don't use slim
-  set :slim, { pretty: true }
+#   set :slim, { pretty: true }
 
 
   # Or use a different image path
@@ -93,20 +108,13 @@ end
 
 activate :deploy do |deploy|
   # https://github.com/tvaughan/middleman-deploy
-  # deploy.build_before = true # default: false
+   deploy.build_before = true # default: false
 
   # Git
-  # deploy.method = :git
+   deploy.method = :git
   # Optional Settings
   # deploy.remote = "custom-remote" # remote name or git url, default: origin
-  # deploy.branch = "custom-branch" # default: gh-pages
-
-  # FTP
-  # deploy.method   = :ftp
-  # deploy.host     = "ftp.example.com"
-  # deploy.path     = "/srv/www/site"
-  # deploy.user     = "tvaughan"
-  # deploy.password = "secret"
+   deploy.branch = "gh-pages" # default: gh-pages
 
   # SFTP 
   # deploy.method   = :sftp
@@ -116,13 +124,5 @@ activate :deploy do |deploy|
   # deploy.user     = "tvaughan" # no default
   # deploy.password = "secret" # no default
 
-  # rsync
-  # deploy.method = :rsync
-  # deploy.host   = "www.example.com"
-  # deploy.path   = "/srv/www/site"
-  # Optional Settings
-  # deploy.user  = "tvaughan" # no default
-  # deploy.port  = 5309 # ssh port, default: 22
-  # deploy.clean = true # remove orphaned files on remote host, default: false
 
 end

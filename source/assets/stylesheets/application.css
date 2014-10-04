@@ -3,3 +3,4 @@
  *= require components/_all
  // require font-awesome // font-awesome icons
 */
+ul,li{list-style: none;}

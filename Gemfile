@@ -2,14 +2,15 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
-gem "middleman", "~>3.1.3"
+gem "middleman"
+gem 'nokogiri'
 gem "slim"
 gem "jquery-middleman"
 gem 'therubyracer' # faster JS compiles
 gem "middleman-sprockets"
 
 # font-awesome icons
-# gem 'font-awesome-sass', :git => 'https://github.com/jasl/font-awesome-sass.git', :branch => 'remove-depend-sass-rails'
+gem 'font-awesome-sass', :git => 'https://github.com/jasl/font-awesome-sass.git', :branch => 'remove-depend-sass-rails'
 
 
 # Compress and optimise images
@@ -31,6 +32,7 @@ gem 'middleman-autoprefixer'
 # gem "wdm", "~> 0.1.0") # Windows
 
 # Cross-templating language block fix for Ruby 1.8
+gem "middleman-blog"
 platforms :mri_18 do
   gem "ruby18_source_location"
 end

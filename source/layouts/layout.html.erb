@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <head>
+      
+        <title> "HTML5 Boilerplate"</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+
+    <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css","application"%>
+    <%= javascript_include_tag  "vendor/modernizr.js"%>
+
+      <%= stylesheet_link_tag "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css", "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" %>
+      <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"%>
+
+  </head>
+  <body>
+  <%=render_partial "/layouts/partials/header"%>
+
+  <!-- Page Content -->
+  <div class="container" style="margin-top:60px">
+
+    <div class="row">
+
+      <!-- Blog Post Content Column -->
+      <div class="col-lg-8">
+        <%= yield%>
+</div>
+      <!-- Blog Sidebar Widgets Column -->
+      <div class="col-md-4">
+
+        <!--&lt;!&ndash; Blog Search Well &ndash;&gt;-->
+        <!--<div class="well">-->
+          <!--<h4>Blog Search</h4>-->
+          <!--<div class="input-group">-->
+            <!--<input type="text" class="form-control">-->
+                        <!--<span class="input-group-btn">-->
+                            <!--<button class="btn btn-default" type="button">-->
+                              <!--<span class="glyphicon glyphicon-search"></span>-->
+                            <!--</button>-->
+                        <!--</span>-->
+          <!--</div>-->
+          <!--&lt;!&ndash; /.input-group &ndash;&gt;-->
+        <!--</div>-->
+
+        <!-- Blog Categories Well -->
+      <%=render_partial "/layouts/partials/tags"%>
+
+
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Because Bryce 2014</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- jQuery Version 1.11.0 -->
+  <script src="js/jquery-1.11.0.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+  </body>
+
+</html>
